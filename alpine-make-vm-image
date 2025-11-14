@@ -740,6 +740,10 @@ if [ "$PACKAGES" ]; then
 	_apk add --root . $PACKAGES
 fi
 
+if [ "$ARCH" = "s390x" ]; then
+   _apk  add  --root .  --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community cloud-init
+fi
+
 #-----------------------------------------------------------------------
 if [ -L /etc/apk/cache ]; then
 	rm etc/apk/cache >/dev/null 2>&1
